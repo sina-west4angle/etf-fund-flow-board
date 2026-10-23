@@ -1,0 +1,5 @@
+# etf-fund-flow-board · Supabase 项目配置
+# project_id 为项目 ref (公开标识, 非秘密)。本项目当前无 Edge Function,
+# 仅用 SQL 迁移 + 数据表; 将来加函数时在此登记 [functions.<name>] 并在
+# deploy.yml 中加 supabase functions deploy 步骤 (方法见 README)。
+project_id = "ocqfhempmbxmriecijrg"
