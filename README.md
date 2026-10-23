@@ -1,1 +1,77 @@
-IyBldGYtZnVuZC1mbG93LWJvYXJkIMK3IDIw5Y+q6YeN54K5RVRG6LWE6YeR6KeC5rWL55yL5p2/77yI6Ieq5pyJ54mI77yJCgrmlbDmja7okL0gU3VwYWJhc2XjgIHnvZHnq5nokL0gR2l0SHViIOeahOiHquWKqOmDqOe9sumTvui3r++8jOaMiSBtdXNlMTIg55qECuOAjEdpdEh1YiArIFN1cGFiYXNlIOiHquWKqOmDqOe9suOAjeaWueazleiQveWcsO+8iOS7k+W6k+WNs+ecn+ebuOOAgeWPjOmAmumBk+WIhuW3peOAgea1geawtOe6v+mDqOe9suOAgeaOpeWPo+mqjOivge+8ieOAggoKIyMg5p625p6ECgpgYGB0ZXh0CnBpcGVsaW5lL2J1aWxkX2RhdGEucHkgICjmlrDmtaov5LiK5Lqk5omAL+a3seS6pOaJgOWFrOW8gOa6kCkKICAgICAgICDilIIgIOeUn+aIkAogICAgICAgIOKWvApzaXRlLyAg6Z2Z5oCB56uZIChpbmRleC5odG1sICsgYXBwLmpzICsgZGF0YS5qcywgRUNoYXJ0cykg4pSA4pSAcHVzaOKUgOKUgOKWtiBHaXRIdWIgUGFnZXMKICAgICAgICDilIIKcGlwZWxpbmUvc3luY19zdXBhYmFzZS5weSAo5pWw5o2u6Z2iIFBvc3RnUkVTVCwgc2VydmljZV9yb2xlKQogICAgICAgIOKUgiAgdXBzZXJ0CiAgICAgICAg4pa8ClN1cGFiYXNlIOmhueebriBvY3FmaGVtcG1ieG1yaWVjaWpyZyAobXVzZXNpbmEpCiAg4pSc4pSAIGV0Zl9kYWlseV90b3RhbCAgIOS4gOihjOS4gOWkqTog5ZCI6K6h5oiQ5Lqk6aKdL+WHgOa1geWFpSAo5Lq/5YWDKeOAgeS4iuivgeaUtuebmOOAgeaJmOW6leagh+iusAogIOKUlOKUgCBldGZfZGFpbHlfZGV0YWlsICDkuIDooYzkuIDlpKnkuIDlj6o6IOaUtuebmC/miJDkuqTpop0gKOS6v+WFgykv5Lu96aKdICjku70pL+WHgOa1geWFpSAo5Lq/5YWDKQpzdXBhYmFzZS9taWdyYXRpb25zLyAgIOW7uuihqCBEREwgKOW5guetiSksIOe7jyBNYW5hZ2VtZW50IEFQSSAoc2JwXykg5omn6KGMCi5naXRodWIvd29ya2Zsb3dzL2RlcGxveS55bWwgIHB1c2gg5YiwIG1haW4g6Ieq5YqoOiDot5EgU1FMIOi/geenuyAtPiDlj5HluIMgUGFnZXMKYGBgCgojIyDpgJrpgZPliIblt6XvvIjlh63or4Hpg73lnKjkv53pmanlupPvvIznu53kuI3ov5vku5PlupMv6IGK5aSp77yJCgp8IOmdoiB8IOmAmumBkyB8IOacrOWcsOiEmuacrCB8IOeKtuaAgSB8CnwtLS18LS0tfC0tLXwtLS18Cnwg566h55CG6Z2iIHwgTWFuYWdlbWVudCBBUEkgYGFwaS5zdXBhYmFzZS5jb21g77yI6L+e5o6l5ZmoIGBjdXN0b20uc3VwYWJhc2UtbWdtdGDvvIxzYnBfIOS7pOeJjO+8iSB8IGBkZXBsb3kvc2JfbWdtdC5weWDvvIjpobnnm67lhoXlsIHoo4XvvIzlkIzov57mjqXlmajvvIkvIOi/nuaOpeWZqCBoZWxwZXIgYGN1c3RvbS5zdXBhYmFzZS1tZ210L2Jpbi9zYl9tZ210LnB5YCB8IOKchSDlt7LpqozpgJrvvJrmn6Xpobnnm67jgIHot5EgU1FML0RETCDlnYflj68gfAp8IOaVsOaNrumdoiB8IFBvc3RnUkVTVO+8iOi/nuaOpeWZqCBgY3VzdG9tLnN1cGFiYXNlYO+8jHNlcnZpY2Vfcm9sZe+8iSB8IGBkZXBsb3kvc2JfZGF0YS5weWDvvIjpgI/kvKDml6LmnIkgaGVscGVy77yJ44CBYHBpcGVsaW5lL3N5bmNfc3VwYWJhc2UucHlgIHwg4pyFIOW3sumqjOmAmiB8Cgrms6jmhI/vvJpgY3VzdG9tLnN1cGFiYXNlYCDpgqPmiormmK/mlbDmja7pnaLpkqXljJnvvIznm7TmjqXosIMgTWFuYWdlbWVudCBBUEkg5Lya5ZueCjQwMSBgTm8gYWNjZXNzIHRva2VuIHByb3ZpZGVkYO+8iOWug+S7pSBhcGlrZXkg5aS05oqV6YCS77yM566h55CG6Z2i5Y+q6K6kIEJlYXJlciBzYnBf77yJ77yMCueuoeeQhumdouW/hemhu+i1sCBgY3VzdG9tLnN1cGFiYXNlLW1nbXRg44CC5oql6ZSZ562+5ZCN5a+554Wn6KeBIG11c2UxMiDmlrnms5XnrKzkuInoioLjgIIKCiMjIOW3suiQveWcsOeKtuaAge+8iDIwMjYtMTAtMjMg5a6e5rWL77yJCgotIOS4pOihqOW3suW7uu+8iOe7k+aehOS4jiBgc3VwYWJhc2UvbWlncmF0aW9ucy8wMDAxX2NyZWF0ZV9ldGZfdGFibGVzLnNxbGAg5LiA6Ie077ybCiAg6K+l6L+B56e75bey5LqO5b2T5pel57uPIE1hbmFnZW1lbnQgQVBJIOW5guetiemHjei3kemqjOivgeaXoOWJr+S9nOeUqO+8ieOAggotIOaVsOaNruW3suWQjOatpe+8mmBldGZfZGFpbHlfdG90YWxgIDczOCDooYzvvIgyMDIzLTEwLTA5IH4gMjAyNi0xMC0yM++8jFNRTCBjb3VudCDlrp7mtYvvvInvvJsKICBgZXRmX2RhaWx5X2RldGFpbGAgMTQsNzYwIOihjCB1cHNlcnQg5a6M5oiQ77yINzM4IOaXpSDDlyAyMCDlj6rvvInjgIIKLSDku73pop0v5YeA5rWB5YWl6KaG55uW6ZqP566h57q/5Zue5rqv6L+b5bqm77ya5rKq5biC5Lu96aKdIDQ5MCDml6Xlt7Llm57loavvvIjoh7MgMjAyNi0xMC0yMu+8ie+8jAogIOa3seW4guS7vemineebruWJjei/kSAzMCDml6XvvIjljLrpl7TmiqXooajlm57muq/kuK3vvInvvJvopobnm5bkuI3otrPnmoTml6XlrZAgbmV0ZmxvdyDkuLogbnVsbO+8jOS4jee8lumAoOOAggogIOivpuingSBgcGlwZWxpbmUvUkVQT1JULm1kYOOAggoKIyMg5pel5bi45pON5L2cCgpgYGBiYXNoCiMg566h57q/6YeN566XICsg5ZCM5q2lICjooajlt7LlnKgsIOebtOaOpSB1cHNlcnQ7IOihqOS4jeWcqOiHquWKqOiQvSBwaXBlbGluZS9zdXBhYmFzZV9yb3dzLmpzb24pCn4vd29ya3NwYWNlL211c2UtZnJlZS1tYXJrZXQtZGF0YS8udmVudi9iaW4vcHl0aG9uIHBpcGVsaW5lL2J1aWxkX2RhdGEucHkKcHl0aG9uMyBwaXBlbGluZS9zeW5jX3N1cGFiYXNlLnB5CgojIOeuoeeQhumdojog5p+l6aG555uuIC8g6LeR5Lu75oSPIFNRTCAvIOafpeihqOe7k+aehApweXRob24zIGRlcGxveS9zYl9tZ210LnB5IHByb2plY3RzCnB5dGhvbjMgZGVwbG95L3NiX21nbXQucHkgcXVlcnkgInNlbGVjdCBjb3VudCgqKSBmcm9tIHB1YmxpYy5ldGZfZGFpbHlfdG90YWwiCnB5dGhvbjMgZGVwbG95L3NiX21nbXQucHkgcXVlcnktZmlsZSBzdXBhYmFzZS9taWdyYXRpb25zLzAwMDFfY3JlYXRlX2V0Zl90YWJsZXMuc3FsCgojIOaVsOaNrumdojog6K+76KGoCnB5dGhvbjMgZGVwbG95L3NiX2RhdGEucHkgZ2V0IC0tcGF0aCAiL3Jlc3QvdjEvZXRmX2RhaWx5X3RvdGFsP3NlbGVjdD0qJm9yZGVyPXRyYWRlX2RhdGUuZGVzYyZsaW1pdD01IgpgYGAKCiMjIEdpdEh1YiDokL3lnLDmuIXljZXvvIjlvoXlip7vvIzkuIDmrKHmgKfvvIkKCuaMiSBtdXNlMTIg5pa55rOV56ys5LiD6IqC56ysIDMg5p2h77yaR2l0SHViIOW6lOeUqOayoeacieW7uuS7k+S4juWGmSB3b3JrZmxvd3Mg55qE5p2D6ZmQ77yM5omA5Lul77yaCgoxLiDnlKjmiLflnKggR2l0SHViIOaJi+WKqOW7uuengeS7kyBgc2luYS13ZXN0NGFuZ2xlL2V0Zi1mdW5kLWZsb3ctYm9hcmRg77yMCiAgIOW5tuaKiuS7k+W6k+WKoOWFpSBNdXNlIEdpdEh1YiDlupTnlKjnmoTmjojmnYPojIPlm7TjgIIKMi4g5pys5Zyw5LuT5bqT5beyIGluaXQg5bm25a6M5oiQ6aaW5LiqIGNvbW1pdO+8iOingeS4i++8ie+8jOW7uuWlveS7k+WQju+8mgogICBgZ2l0IHJlbW90ZSBhZGQgb3JpZ2luIGdpdEBnaXRodWIuY29tOnNpbmEtd2VzdDRhbmdsZS9ldGYtZnVuZC1mbG93LWJvYXJkLmdpdCAmJiBnaXQgcHVzaCAtdSBvcmlnaW4gbWFpbmAKICAg77yI5pys5py6IGdoIOacqueZu+W9leOAgeaXoCBTU0gg5o6o6YCB5Yet6K+B5pe277yM5pS555SxIEdpdEh1YiDov57mjqXlmaggQ29udGVudHMgQVBJIOmAkOaWh+S7tuWGmeWFpe+8jAogICDms6jmhI8gY29udGVudCDkvKDnuq/mlofmnKzkuI3opoHkvKAgYmFzZTY0IOKAlOKAlCDmlrnms5XnrKzkuIPoioLnrKwgNCDmnaHjgILvvIkKMy4gYC5naXRodWIvd29ya2Zsb3dzL2RlcGxveS55bWxgIOiLpee7j+i/nuaOpeWZqOWGmeS4jei/m+WOu++8iHdvcmtmbG93IHNjb3BlIDQwM++8ie+8jAogICDnlLHnlKjmiLflnKjnvZHpobXnq6/nspjotLTliJvlu7rkuIDmrKHvvJvmraTlkI7ml6XluLjlj5jmm7TotbDmraPluLggcHVzaOOAggo0LiDku5PlupMgU2V0dGluZ3Mg4oaSIFNlY3JldHMg5re75Yqg77yaCiAgIGBTVVBBQkFTRV9BQ0NFU1NfVE9LRU5g77yIQWN0aW9ucyDkuJPnlKggc2JwX++8jOS4juacrOWcsOmCo+aKiuWIhuW8gOeUn+aIkO+8jOacieaViOacn+mAiSA5MCDlpKnvvInjgIEKICAgYFNVUEFCQVNFX1BST0pFQ1RfUkVGYCA9IGBvY3FmaGVtcG1ieG1yaWVjaWpyZ2DjgIIKNS4gU2V0dGluZ3Mg4oaSIFBhZ2VzIOKGkiBTb3VyY2Ug6YCJIOKAnEdpdEh1YiBBY3Rpb25z4oCd44CCCjYuIHB1c2gg5ZCO55yLIEFjdGlvbnMg6LeR5a6M77yM5YaN5oq95p+l57q/5LiK6aG16Z2i5LiOIFN1cGFiYXNlIOiuoeaVsO+8jOWujOaIkOmqjOivgemXreeOr+OAggo=
+# etf-fund-flow-board · 20只重点ETF资金观测看板（自有版）
+
+数据落 Supabase、网站落 GitHub 的自动部署链路，按 muse12 的
+「GitHub + Supabase 自动部署」方法落地（仓库即真相、双通道分工、流水线部署、接口验证）。
+
+## 架构
+
+```text
+pipeline/build_data.py  (新浪/上交所/深交所公开源)
+        │  生成
+        ▼
+site/  静态站 (index.html + app.js + data.js, ECharts) ──push──▶ GitHub Pages
+        │
+pipeline/sync_supabase.py (数据面 PostgREST, service_role)
+        │  upsert
+        ▼
+Supabase 项目 ocqfhempmbxmriecijrg (musesina)
+  ├─ etf_daily_total   一行一天: 合计成交额/净流入 (亿元)、上证收盘、托底标记
+  └─ etf_daily_detail  一行一天一只: 收盘/成交额 (亿元)/份额 (份)/净流入 (亿元)
+supabase/migrations/   建表 DDL (幂等), 经 Management API (sbp_) 执行
+.github/workflows/deploy.yml  push 到 main 自动: 跑 SQL 迁移 -> 发布 Pages
+```
+
+## 通道分工（凭证都在保险库，绝不进仓库/聊天）
+
+| 面 | 通道 | 本地脚本 | 状态 |
+|---|---|---|---|
+| 管理面 | Management API `api.supabase.com`（连接器 `custom.supabase-mgmt`，sbp_ 令牌） | `deploy/sb_mgmt.py`（项目内封装，同连接器）/ 连接器 helper `custom.supabase-mgmt/bin/sb_mgmt.py` | ✅ 已验通：查项目、跑 SQL/DDL 均可 |
+| 数据面 | PostgREST（连接器 `custom.supabase`，service_role） | `deploy/sb_data.py`（透传既有 helper）、`pipeline/sync_supabase.py` | ✅ 已验通 |
+
+注意：`custom.supabase` 那把是数据面钥匙，直接调 Management API 会回
+401 `No access token provided`（它以 apikey 头投递，管理面只认 Bearer sbp_），
+管理面必须走 `custom.supabase-mgmt`。报错签名对照见 muse12 方法第三节。
+
+## 已落地状态（2026-10-23 实测）
+
+- 两表已建（结构与 `supabase/migrations/0001_create_etf_tables.sql` 一致；
+  该迁移已于当日经 Management API 幂等重跑验证无副作用）。
+- 数据已同步：`etf_daily_total` 738 行（2023-10-09 ~ 2026-10-23，SQL count 实测）；
+  `etf_daily_detail` 14,760 行 upsert 完成（738 日 × 20 只）。
+- 份额/净流入覆盖随管线回溯进度：沪市份额 490 日已回填（至 2026-10-22），
+  深市份额目前近 30 日（区间报表回溯中）；覆盖不足的日子 netflow 为 null，不编造。
+  详见 `pipeline/REPORT.md`。
+
+## 日常操作
+
+```bash
+# 管线重算 + 同步 (表已在, 直接 upsert; 表不在自动落 pipeline/supabase_rows.json)
+~/workspace/muse-free-market-data/.venv/bin/python pipeline/build_data.py
+python3 pipeline/sync_supabase.py
+
+# 管理面: 查项目 / 跑任意 SQL / 查表结构
+python3 deploy/sb_mgmt.py projects
+python3 deploy/sb_mgmt.py query "select count(*) from public.etf_daily_total"
+python3 deploy/sb_mgmt.py query-file supabase/migrations/0001_create_etf_tables.sql
+
+# 数据面: 读表
+python3 deploy/sb_data.py get --path "/rest/v1/etf_daily_total?select=*&order=trade_date.desc&limit=5"
+```
+
+## GitHub 落地清单（待办，一次性）
+
+按 muse12 方法第七节第 3 条：GitHub 应用没有建仓与写 workflows 的权限，所以：
+
+1. 用户在 GitHub 手动建私仓 `sina-west4angle/etf-fund-flow-board`，
+   并把仓库加入 Muse GitHub 应用的授权范围。
+2. 本地仓库已 init 并完成首个 commit（见下），建好仓后：
+   `git remote add origin git@github.com:sina-west4angle/etf-fund-flow-board.git && git push -u origin main`
+   （本机 gh 未登录、无 SSH 推送凭证时，改由 GitHub 连接器 Contents API 逐文件写入，
+   注意 content 传纯文本不要传 base64 —— 方法第七节第 4 条。）
+3. `.github/workflows/deploy.yml` 若经连接器写不进去（workflow scope 403），
+   由用户在网页端粘贴创建一次；此后日常变更走正常 push。
+4. 仓库 Settings → Secrets 添加：
+   `SUPABASE_ACCESS_TOKEN`（Actions 专用 sbp_，与本地那把分开生成，有效期选 90 天）、
+   `SUPABASE_PROJECT_REF` = `ocqfhempmbxmriecijrg`。
+5. Settings → Pages → Source 选 “GitHub Actions”。
+6. push 后看 Actions 跑完，再抽查线上页面与 Supabase 计数，完成验证闭环。
