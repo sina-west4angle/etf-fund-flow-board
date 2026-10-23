@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.log
+pipeline/cache/
+pipeline/live_out/
+pipeline/supabase_rows.json
+reference/*.zip
