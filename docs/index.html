@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20只重点ETF资金观测看板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="data.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>20只重点ETF资金观测看板</h1>
+    <div class="sub">宽基ETF（沪深300 / 科创50 / 创业板 / 中证500 / 中证1000 / 中证A500 / 上证50 等 20 只）成交与申赎资金观测</div>
+    <nav>
+      <a href="#part1">① 盘中分钟观测</a>
+      <a href="#part2">② 托底信号对比</a>
+      <a href="#part3">③ 日度资金全景</a>
+    </nav>
+  </header>
+
+  <section class="part" id="part1">
+    <h2 class="pt">第一部分 · 盘中分钟观测</h2>
+    <div class="status">
+      <span class="tag" id="tagDate">--</span>
+      <span class="tag" id="tagUpdate">未加载</span>
+      <span class="tag warn" id="tagS1" style="display:none"></span>
+      <button id="btnRefresh" type="button">立即刷新</button>
+      <button id="btnPause" type="button">暂停自动刷新</button>
+    </div>
+    <section class="chart-wrap"><div class="chart" id="chartMin"></div></section>
+    <section class="chart-wrap"><div class="chart" id="chartCum"></div></section>
+    <h2 class="pt sub2">典型日内走势对照（分钟窗口内样本日均值）</h2>
+    <section class="chart-wrap"><div class="chart half" id="chartTypSup"></div></section>
+    <section class="chart-wrap"><div class="chart half" id="chartTypNor"></div></section>
+    <section class="table-wrap">
+      <h2>单只ETF当日表现（按成交额降序）</h2>
+      <div class="tscroll">
+        <table>
+          <thead><tr><th>代码</th><th>名称</th><th class="num">当日成交额(亿)</th><th class="num">占比</th><th class="num">涨跌幅</th></tr></thead>
+          <tbody id="etfTable"></tbody>
+        </table>
+      </div>
+    </section>
+    <footer>
+      口径：柱为 20 只 ETF 每分钟二级市场成交金额加总；折线为上证综指分钟收盘点位，虚线为上一交易日收盘。横轴固定 09:30~15:00，交易时段约 60 秒自动刷新（需经同源代理服务打开页面），盘中数据有分钟级延迟。<br>
+      量能异常标记（S1）：今日累计成交额与近数日同时段均值曲线之比，≥2 倍时提示。典型走势样本来自分钟数据可得窗口（约近 8 个交易日），分组口径见数据说明。<br>
+      数据来源：新浪行情（分钟与日线）、上交所/深交所官方份额、东方财富基金净值。仅供研究参考，不构成投资建议。
+    </footer>
+  </section>
+
+  <section class="part" id="part2">
+    <h2 class="pt">第二部分 · ETF托底信号</h2>
+    <div class="sub">托底日 = 20 只合计单日净流入（申赎口径）&gt; 100 亿元；虚线为最新一柱的数值水平线，可直接对照历史托底日柱高。</div>
+    <div class="status"><span class="tag" id="tagSupCount">--</span><span class="tag" id="tagLatest">--</span></div>
+    <section class="chart-wrap"><div class="chart" id="chartSupAmt"></div></section>
+    <section class="chart-wrap"><div class="chart" id="chartSupNf"></div></section>
+    <footer>
+      方法：成交额图 = 托底日 + 最近交易日（今日为实时/当日值）；净流入图 = 托底日 + 最近已公布日。净流入为 T+1 口径（份额次日公布），最新一日可能暂缺并以「待公布」占位。<br>
+      数据来源：交易所每日 ETF 份额 × 基金单位净值计算。仅供研究参考，不构成投资建议。
+    </footer>
+  </section>
+
+  <section class="part" id="part3">
+    <h2 class="pt">第三部分 · 日度资金全景</h2>
+    <div class="sub" id="dailyMeta">--</div>
+    <section class="chart-wrap"><div class="chart tall" id="chartDAmt"></div></section>
+    <section class="chart-wrap"><div class="chart tall" id="chartDNf"></div></section>
+    <footer>
+      口径：20 只 ETF 日度成交额（二级市场）与净流入（申赎口径 = 当日份额变动 × 当日单位净值）历史序列；线为上证综指收盘。篮子于 2026-10-15 调整为现行 20 只，此前序列按现行篮子回溯重构（未上市标的不计入），与调整前旧篮子口径不可直接比较。<br>
+      数据来源：新浪日线、上交所/深交所官方份额、东方财富基金净值。仅供研究参考，不构成投资建议。
+    </footer>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
