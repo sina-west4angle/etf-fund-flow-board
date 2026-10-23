@@ -20,11 +20,11 @@
       title: { text: D.init.date + " · 20只ETF分钟成交额合计 + 上证综指", textStyle: { fontSize: 14, color: "#12355c" } },
       tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
       legend: { data: ["分钟成交额(亿)", "上证综指"], right: 0, textStyle: { fontSize: 12 } },
-      grid: { left: 58, right: 64, top: 58, bottom: 30 },
+      grid: { left: 58, right: 64, top: 62, bottom: 30 },
       xAxis: { type: "category", data: SLOTS, axisLabel: { interval: 29, fontSize: 11 } },
       yAxis: [
-        { type: "value", name: "亿元", nameGap: 32, nameTextStyle: { align: "left", padding: [0, 0, 6, 0] }, min: 0 },
-        { type: "value", name: "上证(点)", scale: true, nameGap: 32, nameTextStyle: { align: "right", padding: [0, 0, 6, 0] } }
+        { type: "value", name: "亿元", nameGap: 14, nameTextStyle: { align: "left", padding: [0, 0, 6, 0] }, min: 0 },
+        { type: "value", name: "上证(点)", scale: true, nameGap: 14, nameTextStyle: { align: "right", padding: [0, 0, 6, 0] } }
       ],
       series: [
         { name: "分钟成交额(亿)", type: "bar", data: bars, itemStyle: { color: "#24507e" } },
@@ -46,7 +46,7 @@
     if (cum.prev) s.push({ name: cum.prevDate || "前一交易日", type: "line", data: cum.prev, showSymbol: false, lineStyle: { width: 1.4, color: "#e8a33d" } });
     return {
       title: { text: "累计成交额对比（亿元）", textStyle: { fontSize: 14, color: "#12355c" } },
-      tooltip: { trigger: "axis" }, legend: { right: 0, textStyle: { fontSize: 12 } },
+      tooltip: { trigger: "axis" }, legend: { right: 10, textStyle: { fontSize: 12 } },
       grid: { left: 52, right: 24, top: 48, bottom: 30 },
       xAxis: { type: "category", data: cum.times, axisLabel: { interval: 29, fontSize: 11 } },
       yAxis: { type: "value", min: 0 },
@@ -72,9 +72,9 @@
     return {
       title: { text: title, textStyle: { fontSize: 13, color: "#12355c" } },
       tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
-      grid: { left: 54, right: 58, top: 50, bottom: 26 },
+      grid: { left: 54, right: 58, top: 56, bottom: 26 },
       xAxis: { type: "category", data: D.typ.slots, axisLabel: { interval: 39, fontSize: 11 } },
-      yAxis: [ { type: "value", name: "亿/分钟", nameGap: 30, nameTextStyle: { padding: [0, 0, 6, 0] }, min: 0 }, { type: "value", name: "指数%", scale: true, nameGap: 30, nameTextStyle: { padding: [0, 0, 6, 0] } } ],
+      yAxis: [ { type: "value", name: "亿/分钟", nameGap: 12, nameTextStyle: { padding: [0, 0, 6, 0] }, min: 0 }, { type: "value", name: "指数%", scale: true, nameGap: 12, nameTextStyle: { padding: [0, 0, 6, 0] } } ],
       series: [
         { name: "平均分钟成交额", type: "bar", data: amt, itemStyle: { color: "#7fa6c9" } },
         { name: "上证相对开盘%", type: "line", yAxisIndex: 1, data: idx, showSymbol: false, lineStyle: { width: 1.4, color: "#c0392b" } }
@@ -166,9 +166,9 @@
     var opt = {
       title: { text: title, textStyle: { fontSize: 14, color: "#12355c" } },
       tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
-      grid: { left: 56, right: 28, top: 52, bottom: 56 },
+      grid: { left: 56, right: 28, top: 56, bottom: 56 },
       xAxis: { type: "category", data: xs, axisLabel: { rotate: 38, fontSize: 10.5, interval: 0 } },
-      yAxis: { type: "value", name: "亿元", nameGap: 30, nameTextStyle: { padding: [0, 0, 6, 0] } },
+      yAxis: { type: "value", name: "亿元", nameGap: 12, nameTextStyle: { padding: [0, 0, 6, 0] } },
       series: [{ type: "bar", data: vals,
         markLine: latestVal !== null && latestVal !== undefined ? { silent: true, symbol: "none",
           lineStyle: { type: "dashed", color: "#b02a24" }, label: { position: "insideEndTop", distance: 6, formatter: "最新 " + fmt(latestVal) }, data: [{ yAxis: latestVal }] } : undefined }]
@@ -189,10 +189,10 @@
       title: { text: title, textStyle: { fontSize: 14, color: "#12355c" } },
       tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
       legend: { data: ["上证综指"], right: 0, textStyle: { fontSize: 12 } },
-      grid: { left: 58, right: 62, top: 56, bottom: 64 },
+      grid: { left: 58, right: 62, top: 62, bottom: 64 },
       dataZoom: [{ type: "slider", start: 55 }, { type: "inside" }],
       xAxis: { type: "category", data: dy.dates, axisLabel: { fontSize: 11 } },
-      yAxis: [ { type: "value", name: "亿元", nameGap: 30, nameTextStyle: { padding: [0, 0, 6, 0] } }, { type: "value", name: "上证(点)", scale: true, nameGap: 30, nameTextStyle: { padding: [0, 0, 6, 0] } } ],
+      yAxis: [ { type: "value", name: "亿元", nameGap: 14, nameTextStyle: { padding: [0, 0, 6, 0] } }, { type: "value", name: "上证(点)", scale: true, nameGap: 14, nameTextStyle: { padding: [0, 0, 6, 0] } } ],
       series: [
         { name: title, type: "bar", data: data },
         { name: "上证综指", type: "line", yAxisIndex: 1, data: dy.idx, showSymbol: false, lineStyle: { width: 1.2, color: "#666" } }
