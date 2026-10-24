@@ -30,3 +30,9 @@ td { position: relative; }
 td span.v { position: relative; z-index: 1; }
 .up { color: #c0392b; } .down { color: #1e8e4f; }
 footer { font-size: 12px; color: #7a8a99; line-height: 1.7; border-top: 1px dashed #dbe4ee; margin-top: 12px; padding-top: 8px; }
+
+.chart.broad { height: 400px; }
+#broadHeat td { text-align: right; font-variant-numeric: tabular-nums; }
+#broadHeat td.cat { text-align: left; font-weight: 600; color: #12355c; }
+#broadHeat th { text-align: right; }
+#broadHeat th:first-child { text-align: left; }
