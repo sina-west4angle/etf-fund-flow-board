@@ -6,6 +6,7 @@
 <title>20只重点ETF资金观测看板</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 <script src="data.js"></script>
+<script src="broad.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -67,6 +68,13 @@
     <div class="sub" id="dailyMeta">--</div>
     <section class="chart-wrap"><div class="chart tall" id="chartDAmt"></div></section>
     <section class="chart-wrap"><div class="chart tall" id="chartDNf"></div></section>
+    <h2 class="pt sub2">全市场宽基资金全景</h2>
+    <div class="sub" id="broadMeta">--</div>
+    <section class="chart-wrap"><div class="chart broad" id="chartBroad"></div></section>
+    <section class="table-wrap">
+      <h2>最近一个月 · 各类宽基ETF日度净流入（亿元，红=净申购 / 绿=净赎回，颜色深浅按当列相对大小）</h2>
+      <div class="tscroll" id="broadHeat"></div>
+    </section>
     <footer>
       口径：20 只 ETF 日度成交额（二级市场）与净流入（申赎口径 = 当日份额变动 × 当日单位净值）历史序列；线为上证综指收盘。篮子于 2026-10-15 调整为现行 20 只，此前序列按现行篮子回溯重构（未上市标的不计入），与调整前旧篮子口径不可直接比较。<br>
       数据来源：新浪日线、上交所/深交所官方份额、东方财富基金净值。仅供研究参考，不构成投资建议。
@@ -74,5 +82,6 @@
   </section>
 </div>
 <script src="app.js"></script>
+<script src="broad-chart.js"></script>
 </body>
 </html>
