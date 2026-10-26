@@ -1,6 +1,6 @@
 /* 20只重点ETF资金观测看板 · 前端逻辑（自研实现）
    数据：同目录 data.js（window.__DATA，自有管线产出）；
-   盘中刷新：同源 /api/kline（新浪分钟代理，见 pipeline/server.py），不可用时回落静态数据。 */
+   盘中刷新：同源 /api/kline（新浪分钟代理，见 pipeline/server.py）；单只失败重试 1 次、部分失败仍渲染，全部失败才回落静态数据。 */
 (function () {
   "use strict";
   var D = window.__DATA;
@@ -108,15 +108,41 @@
     var hm = d.getHours() * 100 + d.getMinutes();
     return (hm >= 930 && hm <= 1130) || (hm >= 1300 && hm <= 1500);
   }
-  function fetchK(symbol) {
-    return fetch("https://ocqfhempmbxmriecijrg.supabase.co/functions/v1/etf-live/kline?symbol=" + symbol + "&scale=1&datalen=400").then(function (r) { return r.json(); });
+  function wait(ms) { return new Promise(function (res) { setTimeout(res, ms); }); }
+  function fetchOnce(symbol) {
+    return fetch("https://ocqfhempmbxmriecijrg.supabase.co/functions/v1/etf-live/kline?symbol=" + symbol + "&scale=1&datalen=400").then(function (r) {
+      if (!r.ok) throw new Error("http " + r.status); return r.json();
+    }).then(function (j) { if (!Array.isArray(j)) throw new Error("bad payload"); return j; });
   }
+  /* 容错：单只失败自动重试 1 次（约 2 秒后），仍失败返回 null 而不是抛错，避免一只超时拖垮整轮刷新 */
+  function fetchK(symbol) {
+    return fetchOnce(symbol).catch(function () { return wait(2000).then(function () { return fetchOnce(symbol); }); })
+      .catch(function (e) { console.warn("kline 失败（已重试）: " + symbol, e); return null; });
+  }
+  var lastIdxRows = null, lastPerRows = [];
   function refresh() {
     var jobs = [fetchK("sh000001")].concat(BASKET.map(function (b) { return fetchK(sym(b.code)); }));
     return Promise.all(jobs).then(function (res) {
-      var idxRows = res[0], per = res.slice(1);
-      var days = {}; idxRows.forEach(function (r) { days[r.day.slice(0, 10)] = 1; });
-      var dayList = Object.keys(days).sort(); var today = dayList[dayList.length - 1];
+      var okCount = res.filter(function (r) { return r !== null; }).length;
+      if (okCount === 0) { $("tagUpdate").textContent = "代理不可用，显示静态数据（生成于 " + D.meta.generated + "）"; return; }
+      var idxFresh = res[0] !== null;
+      var freshPer = res.slice(1);
+      if (idxFresh) lastIdxRows = res[0];
+      /* 单只失败：沿用该只上次成功数据，实在没有才按空处理（该只当日额计 0） */
+      var per = freshPer.map(function (rows, i) {
+        if (rows !== null) { lastPerRows[i] = rows; return rows; }
+        console.warn("分钟线缺失，沿用上次数据: " + BASKET[i].code);
+        return lastPerRows[i] || [];
+      });
+      /* today 取所有新鲜数据里的最晚日期；新鲜数据全无时才回落到缓存日期 */
+      var days = {};
+      if (idxFresh) res[0].forEach(function (r) { days[r.day.slice(0, 10)] = 1; });
+      freshPer.forEach(function (rows) { if (rows) rows.forEach(function (r) { days[r.day.slice(0, 10)] = 1; }); });
+      if (Object.keys(days).length === 0) {
+        if (lastIdxRows) lastIdxRows.forEach(function (r) { days[r.day.slice(0, 10)] = 1; });
+        lastPerRows.forEach(function (rows) { if (rows) rows.forEach(function (r) { days[r.day.slice(0, 10)] = 1; }); });
+      }
+      var dayList = Object.keys(days).sort(); var today = dayList.length ? dayList[dayList.length - 1] : D.init.date;
       function slotOf(r) { return r.day.slice(11, 16); }
       var bars = SLOTS.map(function (s) {
         var tot = 0, ok = false;
@@ -124,10 +150,12 @@
         return ok ? +(tot / 1e8).toFixed(4) : null;
       });
       var closes = SLOTS.map(function (s) {
-        var v = null; idxRows.forEach(function (r) { if (r.day.slice(0, 10) === today && slotOf(r) === s) v = r.close; });
+        var v = null; if (idxFresh) res[0].forEach(function (r) { if (r.day.slice(0, 10) === today && slotOf(r) === s) v = r.close; });
         return v;
       });
-      chMin.setOption(minuteOption(bars, closes, D.init.preClose));
+      /* 指数新鲜时整图重绘；指数缺失时只更新成交额柱，保留原有指数线（不留白） */
+      if (idxFresh) chMin.setOption(minuteOption(bars, closes, D.init.preClose));
+      else chMin.setOption({ series: [{ data: bars }] });
       var cum = [], ssum = 0;
       bars.forEach(function (v) { ssum += (v || 0); cum.push(+ssum.toFixed(3)); });
       var base = D.cum.base, devMax = null, devNow = null;
@@ -144,8 +172,9 @@
       }).sort(function (a, b2) { return b2.amount - a.amount; });
       renderTable(table);
       $("tagDate").textContent = "分钟数据日：" + today;
-      $("tagUpdate").textContent = "已刷新 " + new Date().toLocaleTimeString("zh-CN");
-    }).catch(function () { $("tagUpdate").textContent = "代理不可用，显示静态数据（生成于 " + D.meta.generated + "）"; });
+      var ts = new Date().toLocaleTimeString("zh-CN");
+      $("tagUpdate").textContent = okCount === 21 ? "已刷新 " + ts : "已刷新 " + ts + "（" + okCount + "/21 只成功）";
+    }).catch(function (e) { console.warn("刷新内部异常（保留当前画面）", e); });
   }
   function arm() { if (timer) clearInterval(timer); timer = setInterval(function () { if (!paused && isTrading()) refresh(); }, 60000); }
   $("btnRefresh").addEventListener("click", refresh);
