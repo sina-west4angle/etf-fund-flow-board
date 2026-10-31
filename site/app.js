@@ -160,7 +160,13 @@
       bars.forEach(function (v) { ssum += (v || 0); cum.push(+ssum.toFixed(3)); });
       var base = D.cum.base, devMax = null, devNow = null;
       cum.forEach(function (v, i) { if (base[i] > 0.5 && bars[i] !== null) { var dv = v / base[i]; if (devMax === null || dv > devMax) devMax = dv; devNow = dv; } });
-      var cumObj = { times: SLOTS, today: cum, prev: D.cum.prev, prevDate: D.cum.prevDate, base: base,
+      /* 显示截断：S1 已按完整 cum 算完；展示用副本把最后一个有数据格之后全部置 null，
+         今日线在最后有数据处断开、不再向右横拉（无当日数据时全 null，即今日线不画）。 */
+      var lastIdx = -1;
+      bars.forEach(function (v, i) { if (v !== null) lastIdx = i; });
+      var cumDisp = cum.slice();
+      for (var ti = lastIdx + 1; ti < cumDisp.length; ti++) cumDisp[ti] = null;
+      var cumObj = { times: SLOTS, today: cumDisp, prev: D.cum.prev, prevDate: D.cum.prevDate, base: base,
                      s1: { baseDays: D.cum.s1.baseDays, devMax: devMax ? +devMax.toFixed(2) : null, flag: devMax >= 2 } };
       chCum.setOption(cumOption(cumObj)); s1Tag(cumObj.s1);
       var table = BASKET.map(function (b, i) {
